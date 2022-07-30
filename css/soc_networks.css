@@ -35,6 +35,7 @@ a {
     color: #6a6a6a;
     position: relative;
     bottom: 130px;
+    font-size: 20px;
     transition-duration: .5s;
 }
 
@@ -62,9 +63,43 @@ nav {
 }
 
 .games {
-    left: 650px;
+    left: 630px;
 }
 
 .services {
-    left: 840px;
+    left: 790px;
+}
+
+
+h1 {
+    color: #d0d0d0;
+    text-align: center;
+    font-size: 6em;
+    letter-spacing: 5px;
+    margin-top: 250px;
+}
+
+span {
+    transition-duration: .5s;
+}
+
+span:hover {
+    color: transparent;    
+	-webkit-background-clip: text;
+    background-clip: text;    
+    background-image: url('https://media.lpgenerator.ru/uploads/2017/10/17/1.png');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin-top: 250px;
+    margin-left: 150px;
+}
+
+.github {
+    margin-left: 200px;
 }
