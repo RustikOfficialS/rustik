@@ -11,6 +11,8 @@
 
 body {
     background-color: #2c2c2c;
+        height: 100%;
+        width: 100%;
 }
 
 .header {
@@ -34,6 +36,7 @@ a {
     text-decoration: none;
     color: #6a6a6a;
     position: relative;
+    font-size: 20px;
     bottom: 130px;
     transition-duration: .5s;
 }
@@ -62,26 +65,24 @@ nav {
 }
 
 .games {
-    left: 650px;
+    left: 630px;
 }
 
 .services {
-    left: 840px;
+    left: 790px;
 }
 
 .rustik {
-    position: relative;
-    top: 300px;
-    left: 520px;
+    margin-top: 300px;
+    margin-left: 510px;
     font-size: 5em;
     letter-spacing: 7px;
     color: #d0d0d0;
 }
 
 body i {
-    position: relative;
-    top: 310px;
-    left: 580px;
+    margin-top: 400px;
+    margin-left: 570px;
     font-size: 1.9em;
     color: #a2a2a2;
 }
