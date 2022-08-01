@@ -4,8 +4,25 @@ const ctx = canvas.getContext("2d")
 const ground = new Image();
 ground.src = "images/ground.png"
 
-const foodImg = new Image();
-foodImg.src = "images/apple.png"
+const apple = new Image();
+apple.src = "images/apple.png"
+
+const strawberry = new Image();
+strawberry.src = "images/strawberry.png"
+
+const orange = new Image();
+orange.src = "images/orange.png"
+
+foodsArray = [apple, strawberry, orange]
+
+let foodImg
+
+function randomFood() {
+    let randomFood = Math.floor(Math.random() * foodsArray.length)
+    foodImg = foodsArray[randomFood]
+}
+
+randomFood()
 
 let box = 32
 
@@ -41,6 +58,15 @@ function direction(event) {
     }
 }
 
+function eatTail(head, arr) {
+    
+    for (let i = 1; i < snake.length; i++) {
+        if (head.x == arr[i].x && head.y == arr[i].y) {
+            clearInterval(game)
+        }
+    }
+}
+
 function drawGame() {
     ctx.drawImage(ground, 0, 0)
 
@@ -59,6 +85,7 @@ function drawGame() {
     let snakeY = snake[0].y
 
     if (snakeX == food.x && snakeY == food.y) {
+        randomFood()
         score++
 
         food = {
@@ -69,10 +96,20 @@ function drawGame() {
         snake.pop()
     }
 
-    if (snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17) {
-        clearInterval(game)
+    if (snakeX < box) {
+        if (snakeX == 0) {
+            snakeX = 1
+        }
+        snakeX = 576
+    } else if (snakeX > box * 17) {
+        snakeX = 0
     }
 
+    if (snakeY < 3 * box) {
+        snakeY = 576
+    } else if (snakeY > box * 17) {
+        snakeY = 64
+    }
 
     if (dir == "left") snakeX -= box
     if (dir == "down") snakeY += box
@@ -83,6 +120,8 @@ function drawGame() {
         x: snakeX,
         y: snakeY
     }
+
+    eatTail(newHead, snake)
 
     snake.unshift(newHead)
 
