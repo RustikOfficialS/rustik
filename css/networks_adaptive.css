@@ -1,0 +1,45 @@
+@media only screen and (max-width: 1280px) {
+
+    .soc_networks {
+        margin: -90px 55px 0 55px;
+        font-size: 30px;
+    }
+
+    .soc_networks:nth-child(3n) {
+        top: 165px;
+    }
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
+
+    div:not(.header) {
+        margin-left: 350px;
+    }
+
+    .github {
+        margin-top: 200px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .header {
+        width: 760px;
+    }
+
+    .soc_networks {
+        font-size: 28px;
+        margin: -90px 10px 0 10px;
+    }
+
+    div:not(.header) {
+        margin-left: 100px;
+    }
+
+    .github {
+        margin-top: 200px;
+    }
+}

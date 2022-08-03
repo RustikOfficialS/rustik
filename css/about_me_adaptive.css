@@ -1,0 +1,46 @@
+@media only screen and (max-width: 1280px) {
+
+    .soc_networks {
+        margin: -90px 53px 0 53px;
+        font-size: 30px;
+    }
+
+    .soc_networks:nth-child(3n) {
+        top: 165px;
+    }
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 6em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .header {
+        width: 760px;
+    }
+
+    .soc_networks {
+        font-size: 28px;
+        margin: -90px 10px 0 10px;
+    }
+
+    h1 {
+        font-size: 6em;
+        margin-left: 260px;
+    }
+
+    p {
+        font-size: 2.5em;
+        margin-left: 350px;
+    } 
+}
