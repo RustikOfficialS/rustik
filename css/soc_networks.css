@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Kanit', sans-serif;
+    font-family: 'Mouse Memoirs', sans-serif;
     font-family: 'Orbitron', sans-serif;
     font-family: 'Oswald', sans-serif;
     font-family: 'Trispace', sans-serif;
@@ -14,76 +15,26 @@ body {
 }
 
 .header {
-    background-color: #292929;
-    position: fixed;
+    height: 160px;
     width: 100%;
-    height: 130px;
+    background-color: #292929;
 }
 
-.avatar {
-    cursor: pointer;
-    border-radius: 100%;
-    border: 10px solid #6a6a6a;
-    width: 130px;
-    height: 130px;
-    margin-top: 180px;
-    margin-left: 570px;
-}
-
-a {
+.soc_networks {
+    display: inline-block;
     text-decoration: none;
     color: #6a6a6a;
+    font-size: 35px;
+    margin: -130px 101px 0 101px;
+    transition-duration: 0.4s;
+}
+
+.soc_networks:nth-child(3n) {
     position: relative;
-    bottom: 130px;
-    font-size: 20px;
-    transition-duration: .5s;
+    top: 175px;
 }
 
-a:hover {
-    color: transparent;    
-	-webkit-background-clip: text;
-    background-clip: text;    
-    background-image: url('https://media.lpgenerator.ru/uploads/2017/10/17/1.png');
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-nav {
-    position: relative;
-    top: 180px;
-}
-
-.about_me {
-    left: 100px;
-}
-
-.social_networks {
-    left: 250px;
-}
-
-.games {
-    left: 630px;
-}
-
-.services {
-    left: 790px;
-}
-
-
-h1 {
-    color: #d0d0d0;
-    text-align: center;
-    font-size: 6em;
-    letter-spacing: 5px;
-    margin-top: 250px;
-}
-
-span {
-    transition-duration: .5s;
-}
-
-span:hover {
+.soc_networks:hover {
     color: transparent;    
 	-webkit-background-clip: text;
     background-clip: text;    
@@ -94,12 +45,46 @@ span:hover {
 }
 
 img {
-    width: 100px;
-    height: 100px;
-    margin-top: 250px;
-    margin-left: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 10px solid #6a6a6a;
+}
+
+div:not(.header) {
+    width: 600px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: azure;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 650px;
+}
+
+.gh {
+    background: url(https://cdn-icons-png.flaticon.com/512/25/25231.png) 15px 10px/50px 50px no-repeat, azure;
+}
+
+.tg {
+    background: url(https://icon-library.com/images/telegram-icon-png/telegram-icon-png-18.jpg) 15px 10px/50px 50px no-repeat, azure;
+}
+
+.vk {
+    background: url(https://cdn-icons-png.flaticon.com/512/25/25684.png) 15px 10px/50px 50px no-repeat, azure;
+}
+
+.rb {
+    background: url(https://freepngimg.com/thumb/logo/112484-roblox-logo-pic-free-download-png-hq-thumb.png) 15px 10px/50px 50px no-repeat, azure;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
 }
 
 .github {
-    margin-left: 200px;
+    margin-top: 300px;
 }
