@@ -50,3 +50,42 @@ body {
     border-radius: 100%;
     border: 10px solid #6a6a6a;
 }
+
+.game_list {
+    height: 300px;
+    width: 1500px;
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+.snake_game {
+    height: 300px;
+    width: 300px;
+    border: 2px solid red;
+}
+
+.snake_game_avatar {
+    height: 300px;
+    width: 300px;
+}
+
+p {
+    font-size: 40px;
+    color: #d0d0d0;
+    margin-bottom: 18px;
+    margin-left: 40px;
+}
+
+span{
+    transition-duration: .5s;
+}
+
+span:hover {
+    color: transparent;    
+	-webkit-background-clip: text;
+    background-clip: text;    
+    background-image: url('https://media.lpgenerator.ru/uploads/2017/10/17/1.png');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
