@@ -1,4 +1,8 @@
 const canvas = document.getElementById("game")
+const btnUp = document.getElementById("up")
+const btnDown = document.getElementById("down")
+const btnLeft = document.getElementById("left")
+const btnRight = document.getElementById("right")
 const ctx = canvas.getContext("2d")
 
 const ground = new Image();
@@ -40,8 +44,24 @@ snake[0] = {
 }
 
 document.addEventListener("keydown", direction)
+document.addEventListener("click", btns)
 
 let dir
+
+let btn
+
+let checkBtn
+
+let checkSnakeX
+
+let checkSnakeY
+
+function btns() {
+    btnUp.onclick = () => btn="up"
+    btnDown.onclick = () => btn="down"
+    btnLeft.onclick = () => btn="left"
+    btnRight.onclick = () => btn="right"
+}
 
 function direction(event) {
     if (event.keyCode == 37 && dir != "right") {
@@ -96,25 +116,79 @@ function drawGame() {
         snake.pop()
     }
 
-    if (snakeX < box) {
-        if (snakeX == 0) {
-            snakeX = 1
-        }
+    if (snakeX == box || checkSnakeX == 1) {
+        checkSnakeX++
         snakeX = 576
     } else if (snakeX > box * 17) {
         snakeX = 0
     }
 
-    if (snakeY < 3 * box) {
+    if (snakeY == 3 * box || checkSnakeY == 1) {
         snakeY = 576
+        checkSnakeY++
     } else if (snakeY > box * 17) {
         snakeY = 64
     }
 
-    if (dir == "left") snakeX -= box
-    if (dir == "down") snakeY += box
-    if (dir == "right") snakeX += box
-    if (dir == "up") snakeY -= box
+    if (dir == "left") {
+        snakeX -= box
+        btn = ""
+    }
+
+    if (btn == "left" && checkBtn != "right") {
+        snakeX -= box
+        checkBtn = btn
+        dir = ""
+        
+    } else if (btn == "left" && checkBtn == "right") {
+        snakeX += box
+        dir = ""
+    }
+
+    if (dir == "down") {
+        snakeY += box
+        btn = ""
+    }
+
+    if (btn == "down" && checkBtn != "up") {
+        snakeY += box
+        checkBtn = btn
+        dir = ""
+
+    } else if (btn == "down" && checkBtn == "up") {
+        snakeY -= box
+        dir = ""
+    }
+
+    if (dir == "right") {
+        snakeX += box
+        btn = ""
+    }
+
+    if (btn == "right" && checkBtn != "left") {
+        snakeX += box
+        checkBtn = btn
+        dir = ""
+        
+    } else if (btn == "right" && checkBtn == "left") {
+        snakeX -= box
+        dir = ""
+    }
+
+    if (dir == "up") {
+        snakeY -= box
+        btn = ""
+    }
+
+    if (btn == "up" && checkBtn != "down") {
+        snakeY -= box
+        checkBtn = btn
+        dir = ""
+
+    } else if (btn == "up" && checkBtn == "down") {
+        snakeY += box
+        dir = ""
+    }
 
     let newHead = {
         x: snakeX,
